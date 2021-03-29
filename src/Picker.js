@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Equation from "./Equation";
 
 const Picker = () => {
-  const [text, setText] = React.useState("");
-  const [operator, setOperator] = React.useState("+");
+  const [text, setText] = useState("");
+  const [operator, setOperator] = useState("+");
+  const [speed, setSpeed] = useState(1000);
+
+  const changeSpeed = (event) => {
+    setSpeed(event.target.value);
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "33%" }}>
       {" "}
@@ -48,7 +55,15 @@ const Picker = () => {
       >
         /
       </button>
-      <Equation operation={operator} />
+      <input
+        id="slider"
+        type="range"
+        min={1000}
+        max={10000}
+        step={1000}
+        onChange={changeSpeed}
+      />
+      <Equation operation={operator} speed={speed} />
     </div>
   );
 };
