@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./picker.css";
 
 import Equation from "./Equation";
 
@@ -12,57 +13,59 @@ const Picker = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: "33%" }}>
+    <div className="picker-box">
       {" "}
       {text}
-      <button
-        className="Picker"
-        id="add"
-        onClick={() => {
-          setText("Addition");
-          setOperator("+");
-        }}
-      >
-        +
-      </button>
-      <button
-        className="Picker"
-        id="subtract"
-        onClick={() => {
-          setText("Subtract");
-          setOperator("-");
-        }}
-      >
-        -
-      </button>
-      <button
-        className="Picker"
-        id="mult"
-        onClick={() => {
-          setText("Multiply");
-          setOperator("*");
-        }}
-      >
-        *
-      </button>
-      <button
-        className="Picker"
-        id="divide"
-        onClick={() => {
-          setText("Divide");
-          setOperator("/");
-        }}
-      >
-        /
-      </button>
+      <div className="button-box">
+        <button
+          className="Picker"
+          id="add"
+          onClick={() => {
+            setText("Addition");
+            setOperator("+");
+          }}
+        >
+          +
+        </button>
+        <button
+          className="Picker"
+          id="subtract"
+          onClick={() => {
+            setText("Subtract");
+            setOperator("-");
+          }}
+        >
+          -
+        </button>
+        <button
+          className="Picker"
+          id="mult"
+          onClick={() => {
+            setText("Multiply");
+            setOperator("*");
+          }}
+        >
+          *
+        </button>
+        <button
+          className="Picker"
+          id="divide"
+          onClick={() => {
+            setText("Divide");
+            setOperator("/");
+          }}
+        >
+          /
+        </button>
+      </div>
       <input
         id="slider"
         type="range"
         min={1000}
         max={10000}
-        step={1000}
         onChange={changeSpeed}
       />
+      slower ----- faster
       <Equation operation={operator} speed={speed} />
     </div>
   );

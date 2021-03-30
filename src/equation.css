@@ -1,0 +1,11 @@
+.equation-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px;
+  color: #fff;
+}
+
+.equation-set {
+  font-size: 4em;
+}

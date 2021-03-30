@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./equation.css";
 
 const Equation = ({ operation, speed }) => {
   const [first, setFirst] = useState(1);
@@ -20,7 +21,7 @@ const Equation = ({ operation, speed }) => {
       case "*":
         return first * second;
       case "/":
-        return first / second;
+        return (first / second).toFixed(2);
 
       default:
         break;
@@ -28,7 +29,7 @@ const Equation = ({ operation, speed }) => {
   };
 
   return (
-    <div style={{ width: "500px" }}>
+    <div className="equation-box">
       <div className="equation-set" id="numOne">
         {first}
       </div>
