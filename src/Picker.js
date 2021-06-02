@@ -65,7 +65,7 @@ const Picker = () => {
         max={10000}
         onChange={changeSpeed}
       />
-      slower ----- faster
+      ←slower faster→
       <Equation operation={operator} speed={speed} />
     </div>
   );

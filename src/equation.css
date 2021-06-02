@@ -9,3 +9,12 @@
 .equation-set {
   font-size: 4em;
 }
+
+#answer {
+  color: #333;
+  border: 3px solid white;
+}
+
+#answer:hover {
+  color: #fff;
+}
